@@ -24,6 +24,7 @@ class HomeScreen: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .white
         tableView.register(UserDetailTableViewCell.self, forCellReuseIdentifier: UserDetailTableViewCell.identifier)
+        tableView.register(GruposTableViewCell.self, forCellReuseIdentifier: GruposTableViewCell.identifier)
         return tableView
     }()
     

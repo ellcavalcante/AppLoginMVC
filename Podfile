@@ -8,6 +8,7 @@ target 'AppLoginMVC' do
   # Pods for AppLoginMVC
 
 pod 'Firebase/Auth'
+pod 'SnapKit', '~> 5.6.0'
 
   target 'AppLoginMVCTests' do
     inherit! :search_paths

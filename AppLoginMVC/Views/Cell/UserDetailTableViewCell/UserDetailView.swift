@@ -1,5 +1,5 @@
 //
-//  UserDetailTableViewCell.swift
+//  UserDetailView.swift
 //  AppLoginMVC
 //
 //  Created by Ellington Cavalcante on 27/11/22.
@@ -7,9 +7,7 @@
 
 import UIKit
 
-class UserDetailTableViewCell: UITableViewCell {
-    
-    static let identifier: String = "UserDetailTableViewCell"
+class UserDetailView: UIView {
     
     lazy var userImage: UIImageView = {
         let image = UIImageView()
@@ -24,9 +22,8 @@ class UserDetailTableViewCell: UITableViewCell {
         return label
     }()
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         addElements()
         setUpConstraints()
     }
@@ -35,16 +32,11 @@ class UserDetailTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setUpCell(data: DataUser) {
-        self.nameLabel.text = data.name
-        self.userImage.image = UIImage(named: data.nameImage)
+    private func addElements() {
+        self.addSubview(userImage)
+        self.addSubview(nameLabel)
     }
     
-    private func addElements() {
-        self.contentView.addSubview(userImage)
-        self.contentView.addSubview(nameLabel)
-    }
-
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
         
@@ -59,5 +51,19 @@ class UserDetailTableViewCell: UITableViewCell {
         
         
         ])
+    }
+    
+    func configUserImageViewConstraints() {
+        self.userImage.snp.makeConstraints { make in
+            make.centerY.leading.equalToSuperview()
+            make.height.width.equalTo(80)
+        }
+    }
+    
+    func configNameLabelConstraints() {
+        self.nameLabel.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.equalTo(self.userImage.snp.trailing).offset(20)
+        }
     }
 }
