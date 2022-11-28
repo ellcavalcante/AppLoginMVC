@@ -45,23 +45,23 @@ extension LoginVC: loginScreenProtocol{
         
         let homeScreen: HomeVC = HomeVC()
       
-        navigationController?.pushViewController(homeScreen, animated: true)
         
-//        guard let login = screen else { return }
-//
-//        auth?.signIn(withEmail: login.getEmail(), password: login.getPassword(), completion: { (usuario, error) in
-//            if error != nil {
-//                self.alert?.getAlert(titulo: "Atenção", message: "dados incorretos, verifique e tente novamente!")
-//
-//            } else {
-//                if usuario == nil {
-//                    self.alert?.getAlert(titulo: "Atenção", message: "Tivemos um problema inesperado, tente novamente mais tarde")
-//                } else {
-//
-//
-//                }
-//            }
-//        })
+        
+        guard let login = screen else { return }
+
+        auth?.signIn(withEmail: login.getEmail(), password: login.getPassword(), completion: { (usuario, error) in
+            if error != nil {
+                self.alert?.getAlert(titulo: "Atenção!", message: "Dados incorretos, verifique e tente novamente!")
+
+            } else {
+                if usuario == nil {
+                    self.alert?.getAlert(titulo: "Atenção", message: "Tivemos um problema inesperado, tente novamente mais tarde")
+                } else {
+
+                    self.navigationController?.pushViewController(homeScreen, animated: true)
+                }
+            }
+        })
     }
     
     func actionRegisterButton() {

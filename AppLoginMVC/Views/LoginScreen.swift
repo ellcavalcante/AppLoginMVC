@@ -20,19 +20,20 @@ class LoginScreen: UIView {
         self.delegate = delegate
     }
 
-    lazy var loginLabel: UILabel = {
-        let login = UILabel()
-        login.translatesAutoresizingMaskIntoConstraints = false
-        login.textColor = .white
-        login.font = UIFont.boldSystemFont(ofSize: 40)
-        login.text = "Login"
-        return login
-    }()
+    
+//    lazy var loginLabel: UILabel = {
+//        let login = UILabel()
+//        login.translatesAutoresizingMaskIntoConstraints = false
+//        login.textColor = .white
+//        login.font = UIFont.boldSystemFont(ofSize: 40)
+//        login.text = "Login"
+//        return login
+//    }()
     
     lazy var logoImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "whatsapp3")
+        image.image = UIImage(named: "logocopa")
         image.contentMode = .scaleAspectFit
         return image
     }()
@@ -144,21 +145,22 @@ class LoginScreen: UIView {
     }
     
     private func addElements() {
-        addSubview(loginLabel)
+//        addSubview(loginLabel)
         addSubview(logoImage)
         addSubview(emailTextField)
         addSubview(passwordTextField)
         addSubview(loginButton)
         addSubview(registerButton)
+        
     }
     
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
-            self.loginLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
-            self.loginLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+//            self.loginLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
+//            self.loginLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
             
-            self.logoImage.topAnchor.constraint(equalTo: self.loginLabel.bottomAnchor, constant: 20),
+            self.logoImage.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 90),
             self.logoImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60),
             self.logoImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -60),
             self.logoImage.heightAnchor.constraint(equalToConstant: 200),

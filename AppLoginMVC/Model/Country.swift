@@ -10,4 +10,5 @@ import Foundation
 struct Country  {
     var name: String
     var nameImage: String
+  
 }

@@ -22,6 +22,7 @@ class GruposCollectionViewCell: UICollectionViewCell {
     public func setupCell(data: Country) {
         self.gruposCollectionCustomViewScreen.imageView.image = UIImage(named: data.nameImage)
         self.gruposCollectionCustomViewScreen.countryName.text = data.name
+
     }
     
     required init?(coder: NSCoder) {

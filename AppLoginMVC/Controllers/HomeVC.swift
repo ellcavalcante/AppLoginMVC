@@ -16,7 +16,7 @@ class HomeVC: UIViewController {
 //                            DataUser(name: "Camarões", nameImage: "camaroes"),
 //    ]
 //
-    
+
     var grupoA: [Country] = [Country(name: "Holanda", nameImage: "holanda"),
                                   Country(name: "Equador", nameImage: "equador"),
                                   Country(name: "Senegal", nameImage: "senegal"),
@@ -60,11 +60,13 @@ class HomeVC: UIViewController {
     
     override func loadView() {
         view = homeScreen
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.homeScreen.configTableViewProtocols(delegate: self, dataSource: self)
+        
        
     }
     
@@ -83,6 +85,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
+            
             let cell: GruposTableViewCell? = tableView.dequeueReusableCell(withIdentifier: GruposTableViewCell.identifier, for: indexPath) as? GruposTableViewCell
             cell?.dataCollection(data: self.grupoA)
             
@@ -91,8 +94,10 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         if indexPath.row == 1 {
+            
             let cell: GruposTableViewCell? = tableView.dequeueReusableCell(withIdentifier: GruposTableViewCell.identifier, for: indexPath) as? GruposTableViewCell
             cell?.dataCollection(data: self.grupoB)
+            
             
             return cell ?? UITableViewCell()
             

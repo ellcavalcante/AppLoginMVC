@@ -31,7 +31,7 @@ class RegisterScreen: UIView {
     lazy var imageRegister: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "user1")
+        image.image = UIImage(named: "logocopa")
         image.contentMode = .scaleAspectFit
         return image
     }()
@@ -144,13 +144,13 @@ class RegisterScreen: UIView {
         private func setUpConstraints(){
             NSLayoutConstraint.activate([
                 
-                self.imageRegister.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+                self.imageRegister.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 70),
                 self.imageRegister.centerXAnchor.constraint(equalTo: self.centerXAnchor),
                 self.imageRegister.widthAnchor.constraint(equalTo: self.widthAnchor, constant: 150),
                 self.imageRegister.heightAnchor.constraint(equalToConstant: 150),
                 
     
-                self.backButton.topAnchor.constraint(equalTo: self.imageRegister.topAnchor),
+                self.backButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
                 self.backButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
     
                 self.emailTextField.topAnchor.constraint(equalTo: imageRegister.bottomAnchor, constant: 20),

@@ -38,10 +38,12 @@ class GruposCollectionCustomViewScreen: UIView {
     private func addElements() {
         addSubview(imageView)
         addSubview(countryName)
+      
     }
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
+            
             self.imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
             self.imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             self.imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
