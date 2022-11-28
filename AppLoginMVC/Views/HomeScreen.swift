@@ -28,14 +28,6 @@ class HomeScreen: UIView {
         return tableView
     }()
     
-    lazy var backButton: UIButton = {
-        let bButton = UIButton()
-        bButton.translatesAutoresizingMaskIntoConstraints = false
-        bButton.setImage(UIImage(named: "back1"), for: .normal)
-        bButton.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
-        return bButton
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addElements()
@@ -46,10 +38,6 @@ class HomeScreen: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc private func tappedBackButton() {
-        delegate?.actionBackButton()
-    }
-    
     public func configTableViewProtocols(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
         self.tableView.delegate = delegate
         self.tableView.dataSource = dataSource
@@ -57,7 +45,6 @@ class HomeScreen: UIView {
     
     private func addElements() {
         addSubview(tableView)
-        addSubview(backButton)
         setUpConstraints()
         configBackground()
     }
@@ -73,10 +60,7 @@ class HomeScreen: UIView {
             tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
-            
-            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
-            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20)
+            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         
         ])
     }

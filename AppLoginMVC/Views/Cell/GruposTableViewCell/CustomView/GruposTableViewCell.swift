@@ -54,7 +54,7 @@ class GruposTableViewCell: UITableViewCell {
 
 extension GruposTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.data.count
+        return self.data.count 
         
     }
     
