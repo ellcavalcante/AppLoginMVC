@@ -10,6 +10,7 @@ import UIKit
 class HomeVC: UIViewController {
 
     var homeScreen: HomeScreen = HomeScreen()
+    
 //    var dataUser: [DataUser] = [DataUser(name: "Brasil", nameImage: "brasil"),
 //                            DataUser(name: "Servia", nameImage: "servia"),
 //                            DataUser(name: "Suíça", nameImage: "suica"),
@@ -34,7 +35,7 @@ class HomeVC: UIViewController {
     
     var grupoD: [Country] = [Country(name: "França", nameImage: "franca"),
                                   Country(name: "Tunísia", nameImage: "tunisia"),
-                                  Country(name: " Australia", nameImage: "australia"),
+                                  Country(name: " Austrália", nameImage: "australia"),
                                   Country(name: "Dinamarca", nameImage: "dinamarca")]
     
     var grupoE: [Country] = [Country(name: "Espanha", nameImage: "espanha"),
@@ -60,18 +61,20 @@ class HomeVC: UIViewController {
     
     override func loadView() {
         view = homeScreen
+
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.homeScreen.configTableViewProtocols(delegate: self, dataSource: self)
-        
+     
        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
+       
     }
 
 
@@ -79,16 +82,18 @@ class HomeVC: UIViewController {
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 9
+        return 8
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
         
         if indexPath.row == 0 {
             
             let cell: GruposTableViewCell? = tableView.dequeueReusableCell(withIdentifier: GruposTableViewCell.identifier, for: indexPath) as? GruposTableViewCell
             cell?.dataCollection(data: self.grupoA)
-            
+            cell?.gruposTableviewCellScreen.titleLabel.text = "Grupo A"
             return cell ?? UITableViewCell()
             
         }
@@ -97,8 +102,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
             
             let cell: GruposTableViewCell? = tableView.dequeueReusableCell(withIdentifier: GruposTableViewCell.identifier, for: indexPath) as? GruposTableViewCell
             cell?.dataCollection(data: self.grupoB)
-            
-            
+            cell?.gruposTableviewCellScreen.titleLabel.text = "Grupo B"
             return cell ?? UITableViewCell()
             
         }
@@ -106,7 +110,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 2 {
             let cell: GruposTableViewCell? = tableView.dequeueReusableCell(withIdentifier: GruposTableViewCell.identifier, for: indexPath) as? GruposTableViewCell
             cell?.dataCollection(data: self.grupoC)
-            
+            cell?.gruposTableviewCellScreen.titleLabel.text = "Grupo C"
             return cell ?? UITableViewCell()
             
         }
@@ -114,28 +118,28 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 3 {
             let cell: GruposTableViewCell? = tableView.dequeueReusableCell(withIdentifier: GruposTableViewCell.identifier, for: indexPath) as? GruposTableViewCell
             cell?.dataCollection(data: self.grupoD)
-            
+            cell?.gruposTableviewCellScreen.titleLabel.text = "Grupo D"
             return cell ?? UITableViewCell()
         }
         
         if indexPath.row == 4 {
             let cell: GruposTableViewCell? = tableView.dequeueReusableCell(withIdentifier: GruposTableViewCell.identifier, for: indexPath) as? GruposTableViewCell
             cell?.dataCollection(data: self.grupoE)
-            
+            cell?.gruposTableviewCellScreen.titleLabel.text = "Grupo E"
             return cell ?? UITableViewCell()
         }
         
         if indexPath.row == 5 {
             let cell: GruposTableViewCell? = tableView.dequeueReusableCell(withIdentifier: GruposTableViewCell.identifier, for: indexPath) as? GruposTableViewCell
             cell?.dataCollection(data: self.grupoF)
-            
+            cell?.gruposTableviewCellScreen.titleLabel.text = "Grupo F"
             return cell ?? UITableViewCell()
         }
         
         if indexPath.row == 6 {
             let cell: GruposTableViewCell? = tableView.dequeueReusableCell(withIdentifier: GruposTableViewCell.identifier, for: indexPath) as? GruposTableViewCell
             cell?.dataCollection(data: self.grupoG)
-            
+            cell?.gruposTableviewCellScreen.titleLabel.text = "Grupo G"
             return cell ?? UITableViewCell()
             
         }
@@ -143,7 +147,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 7 {
             let cell: GruposTableViewCell? = tableView.dequeueReusableCell(withIdentifier: GruposTableViewCell.identifier, for: indexPath) as? GruposTableViewCell
             cell?.dataCollection(data: self.grupoH)
-            
+            cell?.gruposTableviewCellScreen.titleLabel.text = "Grupo H"
             return cell ?? UITableViewCell()
             
         }
@@ -156,6 +160,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 155
     }
 }

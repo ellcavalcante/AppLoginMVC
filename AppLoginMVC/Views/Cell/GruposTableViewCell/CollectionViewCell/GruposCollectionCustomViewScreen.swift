@@ -20,7 +20,8 @@ class GruposCollectionCustomViewScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.textColor = .darkGray
+        label.textColor = .black
+        label.font = .systemFont(ofSize: 17)
         return label
     }()
     

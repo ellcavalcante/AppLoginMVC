@@ -33,10 +33,11 @@ class GruposTableViewCell: UITableViewCell {
     
     private func setUpConstraintsGruposTableViewCellScreen() {
         NSLayoutConstraint.activate([
-            self.gruposTableviewCellScreen.topAnchor.constraint(equalTo: self.topAnchor),
+            self.gruposTableviewCellScreen.topAnchor.constraint(equalTo: self.topAnchor, constant: -10),
             self.gruposTableviewCellScreen.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.gruposTableviewCellScreen.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            self.gruposTableviewCellScreen.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            self.gruposTableviewCellScreen.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 42),
+            
             
         ])
     }
@@ -54,7 +55,7 @@ class GruposTableViewCell: UITableViewCell {
 
 extension GruposTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.data.count 
+        return self.data.count
         
     }
     

@@ -27,6 +27,10 @@ class RegisterVC: UIViewController {
         auth = Auth.auth()
         alert = Alert(controller: self)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 
 }
 

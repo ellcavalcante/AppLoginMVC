@@ -31,10 +31,6 @@ class LoginVC: UIViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-    
 }
 
 extension LoginVC: loginScreenProtocol{

@@ -21,6 +21,7 @@ class UserDetailTableViewCell: UITableViewCell {
         
         addElements()
         configConstraintsDescriptionCell()
+       
     }
     
     

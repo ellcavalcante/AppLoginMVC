@@ -6,8 +6,18 @@
 //
 
 import UIKit
-
+import SnapKit
 class GruposTableViewCellScreen: UIView {
+    
+    lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .black
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.text = "Grupo A"
+        return label
+    }()
     
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewLayout.init())
@@ -26,6 +36,9 @@ class GruposTableViewCellScreen: UIView {
         super.init(frame: frame)
         addElements()
         configConstrainsts()
+        setUpConstraints()
+        
+        
     }
     
     required init?(coder: NSCoder) {
@@ -39,14 +52,16 @@ class GruposTableViewCellScreen: UIView {
     
     private func addElements() {
         addSubview(collectionView)
+        addSubview(titleLabel)
     }
     
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
-            self.collectionView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            self.collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+
+            self.titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
+            self.titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            self.titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            self.titleLabel.heightAnchor.constraint(equalToConstant: 25)
             
         ])
     }
@@ -54,6 +69,14 @@ class GruposTableViewCellScreen: UIView {
     func configConstrainsts() {
         self.collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+            make.top.equalTo(titleLabel)
         }
     }
+    
+//    func configTitleLabel() {
+//        self.titleLabel.snp.makeConstraints { make in
+//            make.top.centerY.equalToSuperview().offset(10)
+//
+//        }
+//    }
 }

@@ -26,6 +26,7 @@ class UserDetailView: UIView {
         super.init(frame: frame)
         addElements()
         setUpConstraints()
+       
     }
     
     required init?(coder: NSCoder) {
@@ -36,6 +37,8 @@ class UserDetailView: UIView {
         self.addSubview(userImage)
         self.addSubview(nameLabel)
     }
+    
+
     
     private func setUpConstraints() {
         NSLayoutConstraint.activate([

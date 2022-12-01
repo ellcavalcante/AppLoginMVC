@@ -17,14 +17,14 @@ class HomeScreen: UIView {
     func delegate(delegate: HomeViewProtocol) {
         self.delegate = delegate
     }
-    
 
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .white
-        tableView.register(UserDetailTableViewCell.self, forCellReuseIdentifier: UserDetailTableViewCell.identifier)
+//        tableView.register(UserDetailTableViewCell.self, forCellReuseIdentifier: UserDetailTableViewCell.identifier)
         tableView.register(GruposTableViewCell.self, forCellReuseIdentifier: GruposTableViewCell.identifier)
+        
         return tableView
     }()
     
@@ -45,8 +45,9 @@ class HomeScreen: UIView {
     
     private func addElements() {
         addSubview(tableView)
-        setUpConstraints()
+//        setUpConstraints()
         configBackground()
+        configTableViewConstraints()
     }
     
     private func configBackground() {
@@ -54,15 +55,21 @@ class HomeScreen: UIView {
     }
     
     
-    private func setUpConstraints() {
-        NSLayoutConstraint.activate([
-        
-            tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
-        
-        ])
+//    private func setUpConstraints() {
+//        NSLayoutConstraint.activate([
+//
+//            tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+//            tableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+//            tableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+//            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+//
+//        ])
+//    }
+    
+    func configTableViewConstraints() {
+        tableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
 }
 
