@@ -42,6 +42,7 @@ class RegisterScreen: UIView {
         email.autocorrectionType = .no
         email.backgroundColor = .white
         email.borderStyle = .roundedRect
+        email.autocapitalizationType = .none
         email.keyboardType = .emailAddress
         email.placeholder = "Digite seu e-mail:"
         email.textColor = .darkGray
@@ -54,6 +55,7 @@ class RegisterScreen: UIView {
         password.autocorrectionType = .no
         password.backgroundColor = .white
         password.borderStyle = .roundedRect
+        password.autocapitalizationType = .none
         password.keyboardType = .default
         password.isSecureTextEntry = true
         password.placeholder = "Digite sua senha:"

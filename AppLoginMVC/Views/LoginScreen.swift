@@ -43,6 +43,7 @@ class LoginScreen: UIView {
         email.translatesAutoresizingMaskIntoConstraints = false
         email.autocorrectionType = .no
         email.backgroundColor = .white
+        email.autocapitalizationType = .none
         email.borderStyle = .roundedRect
         email.keyboardType = .emailAddress
         email.placeholder = "Digite seu e-mail:"
@@ -56,6 +57,7 @@ class LoginScreen: UIView {
         password.autocorrectionType = .no
         password.backgroundColor = .white
         password.borderStyle = .roundedRect
+        password.autocapitalizationType = .none
         password.keyboardType = .default
         password.isSecureTextEntry = true
         password.placeholder = "Digite sua senha:"
