@@ -69,11 +69,11 @@ class LoginScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Login", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.setTitleColor(.white, for: .normal)
         button.clipsToBounds = true
         button.layer.cornerRadius = 7.5
-        button.backgroundColor = UIColor(red: 0/255, green: 128/255, blue: 0/255, alpha: 1.0)
+        button.backgroundColor = UIColor(red: 54/255, green: 54/255, blue: 54/255, alpha: 1.0)
         button.addTarget(self, action: #selector(tappedLoginButton), for: .touchUpInside)
         return button
     }()
@@ -82,8 +82,8 @@ class LoginScreen: UIView {
         let registerB = UIButton()
         registerB.translatesAutoresizingMaskIntoConstraints = false
         registerB.setTitle("Não tem conta? Cadastre-se", for: .normal)
-        registerB.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        registerB.setTitleColor(.white, for: .normal)
+        registerB.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        registerB.setTitleColor(.black, for: .normal)
         registerB.addTarget(self, action: #selector(tappedRegisterButton), for: .touchUpInside)
         return registerB
     }()
@@ -135,7 +135,7 @@ class LoginScreen: UIView {
     }
     
     private func configBackground() {
-        backgroundColor = UIColor(red: 255/255, green: 165/255, blue: 0/255, alpha: 1.0)
+        backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1.0)
     }
     
     public func getEmail()-> String{
@@ -147,7 +147,7 @@ class LoginScreen: UIView {
     }
     
     private func addElements() {
-//        addSubview(loginLabel)
+
         addSubview(logoImage)
         addSubview(emailTextField)
         addSubview(passwordTextField)
@@ -158,17 +158,17 @@ class LoginScreen: UIView {
     
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
-//            self.loginLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
-//            self.loginLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+
+
             
             
-            self.logoImage.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 90),
+            self.logoImage.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10),
             self.logoImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60),
             self.logoImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -60),
             self.logoImage.heightAnchor.constraint(equalToConstant: 200),
             
             
-            self.emailTextField.topAnchor.constraint(equalTo: self.logoImage.bottomAnchor, constant: 20),
+            self.emailTextField.topAnchor.constraint(equalTo: self.logoImage.bottomAnchor, constant: 80),
             self.emailTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             self.emailTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -20),
             self.emailTextField.heightAnchor.constraint(equalToConstant: 45),

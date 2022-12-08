@@ -67,11 +67,11 @@ class RegisterScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Registrar", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.setTitleColor(.white, for: .normal)
         button.clipsToBounds = true
         button.layer.cornerRadius = 7.5
-        button.backgroundColor = UIColor(red: 0/255, green: 128/255, blue: 0/255, alpha: 1.0)
+        button.backgroundColor = UIColor(red: 54/255, green: 54/255, blue: 54/255, alpha: 1.0)
         button.addTarget(self, action: #selector(tappedRegisterButton), for: .touchUpInside)
         return button
     }()
@@ -140,7 +140,7 @@ class RegisterScreen: UIView {
     }
     
     private func configBackground() {
-        backgroundColor = UIColor(red: 255/255, green: 165/255, blue: 0/255, alpha: 1.0)
+        backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1.0)
     }
     
         private func setUpConstraints(){
@@ -155,7 +155,7 @@ class RegisterScreen: UIView {
                 self.backButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
                 self.backButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
     
-                self.emailTextField.topAnchor.constraint(equalTo: imageRegister.bottomAnchor, constant: 20),
+                self.emailTextField.topAnchor.constraint(equalTo: imageRegister.bottomAnchor, constant: 80),
                 self.emailTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
                 self.emailTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
                 self.emailTextField.heightAnchor.constraint(equalToConstant: 45),
